@@ -1,0 +1,46 @@
+<div class="list row">
+  <div class="col-md-8">
+  <div class="col-md-6">
+    <h4>categorys List</h4>
+    <ul class="list-group">
+      <li
+        class="list-group-item"
+        *ngFor="let category of categories; let i = index"
+        [class.active]="i == currentIndex"
+        (click)="setActivecategory(category, i)"
+      >
+        {{ category.category_name }}
+      </li>
+    </ul>
+
+    <button class="m-3 btn btn-sm btn-danger" (click)="removeAllcategories()">
+      Remove All
+    </button>
+  </div>
+  <div class="col-md-6">
+    <div *ngIf="currentcategory.id">
+      <h4>category</h4>
+      <div>
+        <label><strong>category_name:</strong></label> {{ currentcategory.category_name }}
+      </div>
+      <div>
+        <label><strong>target_sales:</strong></label> {{ currentcategory.target_sales }}
+      </div>
+      <div>
+        <label><strong>current_sales:</strong></label>
+        {{ currentcategory.current_sales }}
+      </div>
+      <div>
+        <label><strong>percentage:</strong></label> {{ currentcategory.percentage }}
+      </div>
+      <a class="badge badge-warning" routerLink="/categories/{{ currentcategory.id }}">
+        Edit
+      </a>
+    </div>
+
+    <div *ngIf="!currentcategory">
+      <br />
+      <p>Please click on a category...</p>
+    </div>
+  </div>
+</div>
