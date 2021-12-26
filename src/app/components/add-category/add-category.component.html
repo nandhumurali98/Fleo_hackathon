@@ -1,51 +1,23 @@
 <div>
   <div class="submit-form">
     <div *ngIf="!submitted">
-      <form #form="ngForm"class="mt-4">
+      <form>
       <div class="form-group">
         <label for="category_name">category_name</label>
-        <input
-          type="text"
-          class="form-control"
-          id="category_name"
-          required
-          [(ngModel)]="category.category_name"
-          name="category_name"
-        />
+        <input type="text"class="form-control" required name="category_name">
       </div>
 
       <div class="form-group">
         <label for="target_sales">target_sales</label>
-        <input
-          type="number"
-          class="form-control"
-          id="target_sales"
-          required
-          [(ngModel)]="category.target_sales"
-          name="target_sales"
-        />
+        <input type="number"class="form-control" requiredname="target_sales">
       </div>
       <div class="form-group">
         <label for="current_sales">current_sales</label>
-        <input
-        type="number"
-          class="form-control"
-          id="current_sales"
-          required
-          [(ngModel)]="category.current_sales"
-          name="current_sales"
-        />
+        <input type="number"class="form-control" required name="current_sales">
       </div>
       <div class="form-group">
         <label for="percentage">percentage</label>
-        <input
-        type="number"
-          class="form-control"
-          id="percentage"
-          required
-          [(ngModel)]="category.percentage"
-          name="percentage"
-        />
+        <input type="number" class="form-control"required name="percentage">
       </div>
     </form>
       <button (click)="savecategory()" class="btn btn-success">Submit</button>

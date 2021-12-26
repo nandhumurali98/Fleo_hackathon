@@ -1,5 +1,5 @@
 import { CategoryService } from './../../services/category.service';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Category } from 'src/app/_models/category.model';
 
 @Component({
@@ -7,7 +7,7 @@ import { Category } from 'src/app/_models/category.model';
   templateUrl: './add-category.component.html',
   styleUrls: ['./add-category.component.css']
 })
-export class AddCategoryComponent implements OnInit {
+export class AddCategoryComponent{
 
   category:Category={
   category_name: '',
@@ -19,8 +19,6 @@ export class AddCategoryComponent implements OnInit {
 
   constructor(private categoryService:CategoryService) { }
 
-  ngOnInit(): void {
-  }
   savecategory(): void {
     const data = {
       category_name: this.category.category_name,
